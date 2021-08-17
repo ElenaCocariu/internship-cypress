@@ -12,6 +12,7 @@ describe('Validation of the "Login" Page', () => {
     cy.get('#pass').type('123456789', '{delay:2000}')
     cy.wait(1500)
     cy.get('#send2').click()
+    cy.contains('My Dashboard')
        
    })
     
@@ -40,5 +41,4 @@ describe('Validation of the "Login" Page', () => {
    })
 
 
-
-})
+  })

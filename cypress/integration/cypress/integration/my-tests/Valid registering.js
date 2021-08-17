@@ -33,8 +33,10 @@ describe('Validation of the "Register" Page', () => {
         cy.get('#is_subscribed').click()
         cy.wait(1500)
         cy.get('.buttons-set > .button').click()
-        cy.contains('There is already an account with this email address. If you are sure that it is your email address, click here  to get your password and access your account.')
+        cy.contains('There is already an account with this email address. ')
    
        })
+
+
 
 })
