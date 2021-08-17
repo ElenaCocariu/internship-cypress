@@ -6,18 +6,19 @@ describe('Validation of the "Login" Page', () => {
     })
 
    it('Customer login with valid credentials', () => {
-    cy.visit('http://live.demoguru99.com/index.php/customer/account/login/')
-    cy.get('#email').type('mihaelabarba@gmail.com', '{delay:2000}')
-    cy.wait(1500)
-    cy.get('#pass').type('123456789', '{delay:2000}')
-    cy.wait(1500)
-    cy.get('#send2').click()
-    cy.contains('My Dashboard')
-       
-   })
+      cy.get('body div.header-language-background p')
+      cy.get('.skip-account').click()
+      cy.get('#header-account > .links > ul > .last > a').click()
+      cy.get('#email').type('mihaelabarba@gmail.com').should('have.value','mihaelabarba@gmail.com' )
+      cy.get('#pass').type('123456789').should('have.value','123456789')
+      cy.get('#send2 > :nth-child(1) > span').click()
+     
+     })
     
    it('Customer login with invalid password', () => {
-    cy.visit('http://live.demoguru99.com/index.php/customer/account/login/')
+    cy.get('body div.header-language-background p')
+    cy.get('.skip-account').click()
+    cy.get('#header-account > .links > ul > .last > a').click()
     cy.get('#email').type('mihaelabarba@gmail.com', '{delay:2000}')
     cy.wait(1500)
     cy.get('#pass').type('987654321', '{delay:2000}')
@@ -29,7 +30,9 @@ describe('Validation of the "Login" Page', () => {
    })
 
    it('Customer login with invalid email', () => {
-    cy.visit('http://live.demoguru99.com/index.php/customer/account/login/')
+    cy.get('body div.header-language-background p')
+    cy.get('.skip-account').click()
+    cy.get('#header-account > .links > ul > .last > a').click()
     cy.get('#email').type('mihaelabarba@yahoo.com', '{delay:2000}')
     cy.wait(1500)
     cy.get('#pass').type('123456789', '{delay:2000}')
