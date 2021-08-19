@@ -116,12 +116,10 @@ describe('Tests for unregistered customers', () => {
       cy.writeFile('D:/Assist INTERNSHIP VARA 2021/userData.txt', 'email: ' + email + '\n', {flag:'a+'})
       cy.get('.col-main > :nth-child(3)').invoke('text').then(($orderId) => {
         cy.writeFile('D:/Assist INTERNSHIP VARA 2021/userData.txt', $orderId, {flag: 'a+'})
-      })
+      }) 
 
 
     })
 
     
-
-
 })
