@@ -7,17 +7,19 @@ describe('Tests for registered customers', () => {
   
     })
 
-    it('Testing for updating account information', () => {
+   /* it('Testing for updating account information', () => {
         cy.get('.skip-account').click().scrollIntoView()
         cy.get('#header-account > .links > ul > .first > a').should('have.text', 'My Account').click()
         cy.get('#email').type('madampopin@gmail.ro').should('have.value','madampopin@gmail.ro')
         cy.get('#pass').type('123456789').should('have.value','123456789')
         cy.get('#send2').should('have.text','Login').click()
         cy.get('h1').should('have.text','My Dashboard')
+        cy.wait(3000)
         cy.get(':nth-child(3) > .col2-set > .col-1 > .box > .box-title > a').click()
         cy.get('#firstname').click()
         cy.get('#firstname').clear()
         cy.get('#firstname').click().type('Madam Seva').should('have.value', 'Madam Seva')
+        cy.wait(3000)
         cy.get('#lastname').click()
         cy.get('#lastname').clear()
         cy.get('#lastname').click().type('Lascu').should('have.value', 'Lascu')
@@ -25,16 +27,17 @@ describe('Tests for registered customers', () => {
         cy.get('.buttons-set > .button').click()
         cy.get('.success-msg > ul > li').should('have.text', 'The account information has been saved.')
 
-    })
+    })*/
 
 
-    it('Testing for adding a new address', () => {
+   /*8it('Testing for adding a new address', () => {
     cy.get('.skip-account').click().scrollIntoView()
     cy.get('#header-account > .links > ul > .first > a').should('have.text', 'My Account').click()
     cy.get('#email').type('mihaelabarba@gmail.com').should('have.value','mihaelabarba@gmail.com')
     cy.get('#pass').type('123456789').should('have.value','123456789')
     cy.get('#send2').should('have.text','Login').click()
     cy.get('h1').should('have.text','My Dashboard')
+    cy.wait(3000)
     cy.get('.block-content > ul > :nth-child(3) > a').click()
     cy.get('.page-title > .button').click()
     cy.get('#telephone').type('0743897540').should('have.value', '0743897540')
@@ -107,33 +110,39 @@ describe('Tests for registered customers', () => {
       cy.get('.first > .product-cart-info > .product-name > a').eq(0).should('exist')
       cy.get('.even > .product-cart-info > .product-name > a').eq(0).should('exist')
       cy.get('.last.odd > .product-cart-info > .product-name > a').eq(0).should('exist')
+      cy.wait(3000)
       cy.get('.last.odd > .product-cart-actions > .cart-links > :nth-child(1) > a').click()
       cy.get('#qty').clear().type(20)
       cy.get('.add-to-cart-buttons > .button').click().should('have.text', 'Update Cart')
+      cy.wait(3000)
       cy.get('.success-msg > ul > li').should('have.text', 'Samsung LCD was updated in your shopping cart.')
       cy.get('tbody>tr > .product-cart-info> .product-name > a').eq(2).should('exist')
+      cy.wait(3000)
       cy.get('.method-checkout-cart-methods-onepage-bottom > .button').click()
       cy.get('#billing-buttons-container > .button').click()
       cy.get('#billing-buttons-container > .button').should('exist')
 
 
-     })
+     })*/
 
 
 
      it('Testing to check order status', () => {
-      cy.get('body div.header-language-background p')
-      cy.get('.skip-account').click()
-      cy.get('#header-account > .links > ul > .last > a').click()
-      cy.get('#email').type('mihaelabarba@gmail.com').should('have.value','mihaelabarba@gmail.com' )
-      cy.get('#pass').type('123456789').should('have.value','123456789')
-      cy.get('#send2 > :nth-child(1) > span').click()
-      cy.get('body > div > div > div.main-container.col2-left-layout > div > div.col-main > div > div > div.page-title > h1')
-      .should('have.text', 'My Dashboard')
-      cy.get('.header-minicart > .skip-link').click()
-      cy.get('#header > div > div.skip-links > div > div > a > span.count').should('have.text', '22')
-      
-      
+        cy.get('body div.header-language-background p')
+        cy.get('.skip-account').click()
+        cy.get('#header-account > .links > ul > .last > a').click()
+        cy.get('#email').type('mihaelabarba@gmail.com').should('have.value','mihaelabarba@gmail.com' )
+        cy.get('#pass').type('123456789').should('have.value','123456789')
+        cy.get('#send2 > :nth-child(1) > span').click()
+        cy.get('body > div > div > div.main-container.col2-left-layout > div > div.col-main > div > div > div.page-title > h1')
+        .should('have.text', 'My Dashboard')
+
+
+
+
+
+
+
      })
 
 
