@@ -1,7 +1,7 @@
 
 describe('API requests',() => {
 
-    it('GET -read 1',() => {
+   it('GET -read 1',() => {
 
         cy.request('https://petstore.swagger.io/v2/store/inventory').then((response) => {
             expect(response).to.have.property('status', 200)
@@ -41,10 +41,24 @@ describe('API requests',() => {
         .should('include',{shipDate: "2021-08-21T19:03:02.972+0000"})
         .should('include',{status: "placed"})
         .should('include',{complete: true})
-        
-        
-           
+                
 })
+
+    it('PUT -Modifies an existing resource',() => { 
+        const item ={
+            
+            "name": "doggie"
+            
+          }
+        cy.request('PUT','https://petstore.swagger.io/v2/pet', item)
+        .its('body')
+        .should('include',{name: 'doggie'})
+
+
+    })
+
+
+
     })
 
 
